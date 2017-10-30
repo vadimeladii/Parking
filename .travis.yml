@@ -10,6 +10,8 @@ branches:
   only:
     - develop
 
+install: ./gradlew assemble --stacktrace
+
 before_script:
 - chmod a+x gradlew
 

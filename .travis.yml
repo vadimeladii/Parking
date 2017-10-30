@@ -8,9 +8,7 @@ os:
 
 branches:
   only:
-    - develop
-
-install: ./gradlew assemble --stacktrace
+    - travis
 
 before_script:
 - chmod a+x gradlew

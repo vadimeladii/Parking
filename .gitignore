@@ -1,0 +1,48 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.class
+
+# ignore folder /build, /out
+/build/
+/common/build/
+/common/out/
+/entry/build/
+/entry/out/
+/gateway/build/
+/gateway/out/
+/notification/build/
+/notification/out/
+/usermanagement/build/
+/usermanagement/out/
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+/.project
+
+target
+target-eclipse
+bin
+.project
+.classpath
+.settings
+*.launch
+.externalToolBuilders
+.DS_Store
+osgi-dev.properties
+generated-sources
+generated-jaxb
+generated-cxf
+*.iml
+*.eml
+*.idea
+*.ipr
+.pmd
+.gradle/

@@ -9,3 +9,6 @@ os:
 branches:
   only:
     - develop
+
+script:
+  - ./gradlew clean clean build

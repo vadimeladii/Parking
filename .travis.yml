@@ -10,5 +10,7 @@ branches:
   only:
     - develop
 
-script:
-  - ./gradlew clean clean build
+before_script:
+- chmod a+x gradlew
+
+script: ./gradlew clean build

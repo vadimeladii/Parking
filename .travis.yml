@@ -1,3 +1,9 @@
+sudo:
+  required
+
+services:
+  docker
+
 language: java
 
 jdk:
@@ -6,13 +12,25 @@ jdk:
 os:
   - linux
 
+env:
+  global:
+    - COMMIT = ${TRAVIS_COMMIT::7}
+
 branches:
   only:
     - develop
+
+after_success:
+  - docker login -u $D_USER -p $D_PASS
+  - export TAG='if [ "$TRAVIS_BRANCH" === "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi'
+  - export NAME = veladii/parking
+  - docker build -t $NAME:$COMMIT .
+  - docker tag $NAME:$COMMIT $NAME:$TAG
+  - docker push $NAME
 
 before_script:
 - chmod a+x gradlew
 
 script:
-- ./gradlew clean build
+#- ./gradlew clean build
 - ./entry/gradlew clean build

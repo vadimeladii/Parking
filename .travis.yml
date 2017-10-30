@@ -8,6 +8,7 @@ os:
 
 branches:
   only:
+    - develop
     - travis
 
 before_script:

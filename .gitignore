@@ -45,4 +45,3 @@ generated-cxf
 *.idea
 *.ipr
 .pmd
-.gradle/

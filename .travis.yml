@@ -23,7 +23,7 @@ branches:
 after_success:
   - docker login -u $D_USER -p $D_PASS
   - export NAME=vadimeladii7/parking
-  - docker build -t $NAME:$COMMIT .
+  - docker build -t $NAME:$COMMIT ./entry
   - docker push $NAME
 
 before_script:

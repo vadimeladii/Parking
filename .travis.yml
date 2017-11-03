@@ -26,7 +26,7 @@ after_success:
   - docker login -u $D_USER -p $D_PASS
 
    #TAG
-    - export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
    #ENTRY
   - export ENTRY=vadimeladii7/parking

@@ -14,7 +14,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'md.utm.fcim'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -26,10 +25,6 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile "org.springframework.boot:spring-boot-starter-jersey"
-	compile group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
-	compile "org.flywaydb:flyway-core:4.2.0"
-	compile 'org.postgresql:postgresql'
 	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
 }

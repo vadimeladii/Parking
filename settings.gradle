@@ -1,7 +1,6 @@
 rootProject.name = 'Parking'
-//includeFlat 'usermanagement'
-//includeFlat 'entry'
-//includeFlat 'gateway'
-//includeFlat 'notification'
+include 'entry'
+include 'usermanagement'
+include 'gateway'
+include 'notification'
 include 'common'
-

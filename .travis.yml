@@ -26,8 +26,8 @@ after_success:
   - docker build -t $NAME:$COMMIT ./entry
   - docker push $NAME
 
-before_script:
-- chmod a+x gradlew
+#before_script:
+#- chmod a+x gradlew
 
-script:
-- ./entry/gradlew clean build
+#script:
+#- ./entry/gradlew clean build

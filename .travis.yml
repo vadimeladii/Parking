@@ -21,13 +21,15 @@ branches:
     - develop
 
 after_success:
+
+   #LOGIN
   - docker login -u $D_USER -p $D_PASS
-  - export NAME=vadimeladii7/parking
-  - docker build -t $NAME:$COMMIT ./entry
-  - docker push $NAME
 
-#before_script:
-#- chmod a+x gradlew
+   #TAG
+    - export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
-#script:
-#- ./entry/gradlew clean build
+   #ENTRY
+  - export ENTRY=vadimeladii7/parking
+  - docker build -t $ENTRY:$COMMIT ./entry
+  - docker tag $ENTRY:$COMMIT $ENTRY:$TAG
+  - docker push $ENTRY

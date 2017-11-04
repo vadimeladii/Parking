@@ -29,7 +29,7 @@ after_success:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
    #ENTRY
-  - export ENTRY=vadimeladii7/parking
+  - export ENTRY=vadimeladii7/entry
   - docker build -t $ENTRY:$COMMIT ./entry
   - docker tag $ENTRY:$COMMIT $ENTRY:$TAG
   - docker push $ENTRY

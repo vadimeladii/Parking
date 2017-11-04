@@ -33,3 +33,9 @@ after_success:
   - docker build -t $ENTRY:$COMMIT ./entry
   - docker tag $ENTRY:$COMMIT $ENTRY:$TAG
   - docker push $ENTRY
+
+   #USERMANAGEMENT
+  - export USERMANAGEMENT=vadimeladii7/usermanagement
+  - docker build -t $USERMANAGEMENT:$COMMIT ./usermanagement
+  - docker tag $USERMANAGEMENT:$COMMIT $USERMANAGEMENT:$TAG
+  - docker push $USERMANAGEMENT

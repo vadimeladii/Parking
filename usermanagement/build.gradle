@@ -22,6 +22,10 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	archiveName 'usermanagement.jar'
+}
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')

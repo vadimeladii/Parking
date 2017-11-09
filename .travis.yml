@@ -39,3 +39,15 @@ after_success:
   - docker build -t $USERMANAGEMENT:$COMMIT ./usermanagement
   - docker tag $USERMANAGEMENT:$COMMIT $USERMANAGEMENT:$TAG
   - docker push $USERMANAGEMENT
+
+   #GATEWAY
+  - export GATEWAY=vadimeladii7/gateway
+  - docker build -t GATEWAY:$COMMIT ./gateway
+  - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
+  - docker push $GATEWAY
+
+   #NOTIFICATION
+  - export NOTIFICATION=vadimeladii7/notification
+  - docker build -t $NOTIFICATION:$COMMIT ./notification
+  - docker tag $NOTIFICATION:$COMMIT $NOTIFICATION:$TAG
+  - docker push $NOTIFICATION

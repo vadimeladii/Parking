@@ -42,7 +42,7 @@ after_success:
 
    #GATEWAY
   - export GATEWAY=vadimeladii7/gateway
-  - docker build -t GATEWAY:$COMMIT ./gateway
+  - docker build -t $GATEWAY:$COMMIT ./gateway
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
   - docker push $GATEWAY
 

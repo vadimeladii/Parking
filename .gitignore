@@ -44,3 +44,5 @@ generated-cxf
 *.idea
 *.ipr
 .pmd
+
+docker-compose.yml

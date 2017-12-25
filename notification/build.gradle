@@ -37,7 +37,7 @@ repositories {
 }
 
 jar {
-	archiveName 'notifications.jar'
+	archiveName 'notification.jar'
 }
 
 dependencies {

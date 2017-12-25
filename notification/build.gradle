@@ -1,24 +1,50 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.8.RELEASE'
+		kotlinVersion = '1.1.61'
+		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
 	}
 }
 
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
+group = 'md.utm.fcim.notification'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+compileKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions {
+		languageVersion = "1.2"
+	}
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = "1.8"
+}
+
+repositories {
+	mavenCentral()
+}
+
 jar {
-	archiveName 'notification.jar'
+	archiveName 'notifications.jar'
 }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile "org.springframework.boot:spring-boot-starter-jersey"
-	compile group: 'org.projectlombok', name: 'lombok', version: '1.16.10'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.0.RELEASE'
 }

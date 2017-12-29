@@ -1,0 +1,25 @@
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+#Datasource Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usermanagement
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+# Hibernate properties
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+#Flyway Sql Migration
+flyway:
+  url: jdbc:postgresql://localhost:5432/usermanagement
+  user: postgres
+  password: postgres
+

@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component
 @Component
 class UserBusinessImpl(val repository: UserRepository,
                        val converter: UserConverter) : UserBusiness {
-
     override fun retrieve(): List<User?> {
         return repository.findAll().map { userEntity -> converter.convert(userEntity) }
     }
 
     override fun retrieveById(id: Long): User? {
         return converter.convert(repository.findOne(id))
+    }
+
+    override fun create(user: User?): User? {
+        return converter.convert(repository.save(converter.reverse().convert(user)))
     }
 }

@@ -1,4 +1,4 @@
-package md.utm.fcim.notification.notification.notification
+package md.utm.fcim.notification.notification
 
 import org.junit.Test
 import org.junit.runner.RunWith

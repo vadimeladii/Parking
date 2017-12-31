@@ -1,4 +1,4 @@
-package md.utm.fcim.notification.notification.config.core
+package md.utm.fcim.notification.config.core
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

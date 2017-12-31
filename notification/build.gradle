@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.61'
+		kotlinVersion = '1.2.10'
 		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
@@ -44,6 +44,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+	compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile "org.springframework.boot:spring-boot-starter-jersey"
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.0.RELEASE'

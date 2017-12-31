@@ -1,10 +1,8 @@
-package md.utm.fcim.notification.notification
+package md.utm.fcim.notification
 
-import org.springframework.stereotype.Component
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 
-@Component
 @Path("/api/notification")
 interface NotificationController {
 

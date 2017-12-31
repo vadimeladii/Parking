@@ -1,6 +1,6 @@
-package md.utm.fcim.notification.notification.config.jersey
+package md.utm.fcim.notification.jersey
 
-import md.utm.fcim.notification.notification.NotificationControllerImpl
+import md.utm.fcim.notification.NotificationControllerImpl
 import org.glassfish.jersey.server.ResourceConfig
 import org.springframework.stereotype.Component
 

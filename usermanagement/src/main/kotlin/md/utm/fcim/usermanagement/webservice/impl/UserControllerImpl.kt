@@ -1,6 +1,7 @@
 package md.utm.fcim.usermanagement.webservice.impl
 
 import md.utm.fcim.usermanagement.business.UserBusiness
+import md.utm.fcim.usermanagement.business.dto.UserLogin
 import md.utm.fcim.usermanagement.webservice.UserController
 import md.utm.fcim.usermanagement.webservice.converter.UserViewConverter
 import md.utm.fcim.usermanagement.webservice.view.UserView
@@ -25,6 +26,12 @@ class UserControllerImpl(val business: UserBusiness,
     override fun create(userView: UserView): Response {
         return Response.ok()
                 .entity(converter.convert(business.create(converter.reverse().convert(userView))))
+                .build()
+    }
+
+    override fun login(userLogin: UserLogin): Response {
+        return Response.ok()
+                .entity(business.login(userLogin))
                 .build()
     }
 }

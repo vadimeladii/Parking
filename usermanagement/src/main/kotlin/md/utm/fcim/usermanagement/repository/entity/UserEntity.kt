@@ -16,9 +16,13 @@ data class UserEntity(@Id
                       val password: String,
 
                       @Column(name = "id_parking_lot")
-                      var idParkingLot: Long? = null
-) {
+                      val idParkingLot: Long? = null,
 
-    @Suppress("unused")
+                      @ManyToMany(fetch = FetchType.EAGER)
+                      @JoinTable(name = "user_role",
+                              joinColumns = [(JoinColumn(name = "id_user"))],
+                              inverseJoinColumns = [(JoinColumn(name = "id_role"))])
+                      val roles: Set<RoleEntity?> = HashSet()) {
+    @Suppress(names = ["unused"])
     private constructor() : this(username = "", password = "")
 }

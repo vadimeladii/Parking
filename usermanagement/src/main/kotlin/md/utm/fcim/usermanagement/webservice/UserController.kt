@@ -1,5 +1,6 @@
 package md.utm.fcim.usermanagement.webservice
 
+import md.utm.fcim.usermanagement.business.dto.UserLogin
 import md.utm.fcim.usermanagement.webservice.view.UserView
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
@@ -21,4 +22,10 @@ interface UserController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     fun create(userView: UserView): Response
+
+    @POST
+    @Path("/login")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun login(userLogin: UserLogin): Response
 }

@@ -1,0 +1,1 @@
+ALTER TABLE user_security ADD CONSTRAINT uc_username UNIQUE (username);

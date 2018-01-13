@@ -7,4 +7,5 @@ data class User(val id: Long?,
                 val username: String,
                 @NotNull
                 val password: String,
-                val idParkingLot: Long?)
+                val idParkingLot: Long?,
+                val roles: Set<Role?>)

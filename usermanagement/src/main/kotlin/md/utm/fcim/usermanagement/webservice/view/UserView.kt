@@ -7,4 +7,5 @@ data class UserView (
         val username: String,
         val password: String,
         @JsonProperty(value = "parking_lot")
-        val idParkingLot: Long? = null)
+        val idParkingLot: Long? = null,
+        val roles: Set<RoleView?>)

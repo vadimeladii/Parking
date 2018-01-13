@@ -45,11 +45,13 @@ dependencies {
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
 	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
 	compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
+	compile("org.springframework.boot:spring-boot-starter-security")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile "org.springframework.boot:spring-boot-starter-jersey"
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.0.RELEASE'
 	compile group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
+	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
 	compile "org.flywaydb:flyway-core:4.2.0"
 	compile 'org.postgresql:postgresql'
 }

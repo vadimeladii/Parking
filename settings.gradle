@@ -1,6 +1,7 @@
 rootProject.name = 'Parking'
 include 'entry'
 include 'usermanagement'
-include 'gateway'
 include 'notification'
 include 'common'
+include 'registry'
+include 'gateway'

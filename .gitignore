@@ -13,6 +13,8 @@
 /notification/out/
 /usermanagement/build/
 /usermanagement/out/
+/registry/build/
+/registry/out/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

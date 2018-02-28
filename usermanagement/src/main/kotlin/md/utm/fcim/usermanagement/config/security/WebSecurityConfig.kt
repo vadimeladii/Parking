@@ -1,4 +1,4 @@
-package md.utm.fcim.usermanagement.config.security
+package md.utm.fcim.usermanagement.config.core
 
 import md.utm.fcim.usermanagement.business.impl.UserSecurityServiceImpl
 import md.utm.fcim.usermanagement.config.filter.StatelessAuthFilter
@@ -28,7 +28,8 @@ class WebSecurityConfig(val userSecurityService: UserSecurityServiceImpl,
                 .antMatchers(HttpMethod.POST, "/api/user/login").permitAll()
                 .and()
                 .authorizeRequests()
-                .anyRequest().authenticated()
+                .anyRequest()
+                .authenticated()
                 .and()
                 .addFilterBefore(statelessAuthFilter, UsernamePasswordAuthenticationFilter::class.java)
     }

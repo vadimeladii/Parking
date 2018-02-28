@@ -1,12 +1,12 @@
 package md.utm.fcim.entry.webservice;
 
-import org.springframework.stereotype.Component;
+import io.swagger.annotations.Api;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-@Component
-@Path("/api/car")
+@Path("/car")
+@Api(value = "CAR Controller Resource Endpoint")
 public interface CarController {
 
     @GET

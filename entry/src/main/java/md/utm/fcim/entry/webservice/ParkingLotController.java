@@ -1,10 +1,13 @@
 package md.utm.fcim.entry.webservice;
 
+import io.swagger.annotations.Api;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/api/parking")
+@Path("/parking")
+@Api(value = "PARKING Controller Resource Endpoint")
 public interface ParkingLotController {
 
     @GET

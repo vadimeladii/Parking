@@ -1,7 +1,7 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.2.10'
-		springBootVersion = '1.5.9.RELEASE'
+		kotlinVersion = '1.2.20'
+		springBootVersion = '1.5.10.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -18,18 +18,21 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'md.utm.fcim.notification'
+group = 'md.utm.fcim'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 compileKotlin {
-	kotlinOptions.jvmTarget = "1.8"
 	kotlinOptions {
-		languageVersion = "1.2"
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "1.8"
 	}
 }
 compileTestKotlin {
-	kotlinOptions.jvmTarget = "1.8"
+	kotlinOptions {
+		freeCompilerArgs = ["-Xjsr305=strict"]
+		jvmTarget = "1.8"
+	}
 }
 
 repositories {
@@ -40,12 +43,33 @@ jar {
 	archiveName 'notification.jar'
 }
 
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
-	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-	compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	compile "org.springframework.boot:spring-boot-starter-jersey"
-	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.0.RELEASE'
+ext {
+	springCloudVersion = 'Edgware.SR2'
 }
+
+dependencies {
+//Kotlin
+	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	compile "org.springframework.boot:spring-boot-starter-jersey"
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.0"
+
+	//  SWAGGER
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
+	compile group: 'io.swagger', name: 'swagger-jersey2-jaxrs', version: '1.5.16'
+}
+
+////	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-oauth2', version: '1.2.0.RELEASE'
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
+

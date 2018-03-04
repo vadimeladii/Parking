@@ -1,6 +1,14 @@
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'md.utm.fcim'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
 buildscript {
 	ext {
-		springBootVersion = '1.5.9.RELEASE'
+		springBootVersion = '1.5.8.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -10,18 +18,9 @@ buildscript {
 	}
 }
 
-apply plugin: 'groovy'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-
-group = 'md.utm.fcim'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
 repositories {
 	mavenCentral()
 }
-
 
 ext {
 	springCloudVersion = 'Edgware.RELEASE'

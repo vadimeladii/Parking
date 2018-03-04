@@ -10,10 +10,14 @@ spring:
     password: postgres
     driver-class-name: org.postgresql.Driver
 
-# JPA Properties
+#JPA Properties
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
+
+#Jersey configuration
+  jersey:
+    application-path: /api
 
 #Flyway Sql Migration
 flyway:
@@ -26,6 +30,7 @@ eureka:
   client:
       serviceUrl:
         defaultZone: http://localhost:8761/eureka/
+
 
 
 
